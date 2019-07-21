@@ -1,20 +1,13 @@
-/* Alias */
 require('module-alias/register');
-
-/* Server */
+const compression = require('compression');
 const express = require('express');
 const next = require('next');
 const cacheableResponse = require('cacheable-response');
 
-/* Status */
 const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== 'production';
-
-/* App */
 const app = next({ dev });
 const handle = app.getRequestHandler();
-
-/* Config */
 let ssrCache;
 
 if (dev) {
@@ -34,9 +27,6 @@ if (dev) {
     send: ({ data, res }) => res.send(data),
   });
 }
-
-/* Package */
-const compression = require('compression');
 
 app.prepare().then(() => {
   /* Create Server */

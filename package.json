@@ -1,17 +1,20 @@
 {
-  "name": "nextjs_preact_starter",
+  "name": "nextjs-preact-starter",
   "version": "1.0.0",
+  "private": true,
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development node server.js",
     "build": "next build",
     "next": "next",
     "start": "cross-env NODE_ENV=production node server.js",
-    "lint": "eslint . --ext .js --ext .jsx --ignore-path .eslintignore --fix"
+    "lint": "eslint . --ext .js --ext .jsx --ignore-path .eslintignore --fix",
+    "deploy": "now --target production",
+    "now-build": "next build"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Edwin cloud <ecloud412@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "cacheable-response": "^1.6.12",
     "compression": "^1.7.4",
@@ -19,14 +22,18 @@
     "express": "^4.17.1",
     "module-alias": "^2.2.0",
     "next": "^9.0.0",
+    "next-compose-plugins": "^2.2.0",
+    "next-offline": "^4.0.2",
     "preact": "^10.0.0-rc.0",
-    "preact-render-to-string": "^5.0.5",
-    "preact-ssr-prepass": "^1.0.0"
+    "preact-render-to-string": "^5.0.6",
+    "preact-ssr-prepass": "^1.0.0",
+    "styled-components": "^4.3.2"
   },
   "_moduleAliases": {
     "react": "node_modules/preact/compat",
     "react-dom": "node_modules/preact/compat",
-    "react-ssr-prepass": "node_modules/preact-ssr-prepass"
+    "react-ssr-prepass": "node_modules/preact-ssr-prepass",
+    "static": "static"
   },
   "resolutions": {
     "lodash": "4.17.14"
@@ -39,10 +46,24 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
-    "next-compose-plugins": "^2.2.0",
-    "next-offline": "^4.0.2",
+    "husky": "^3.0.1",
+    "lint-staged": "^9.2.0",
     "prettier": "^1.18.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "engines": {
+    "node": ">= 10.16.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint . --ext .js --ext .jsx --ignore-path .eslintignore --fix",
+      "git add"
+    ]
   }
 }

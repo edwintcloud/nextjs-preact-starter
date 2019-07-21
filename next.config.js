@@ -6,9 +6,7 @@ const nextConfig = {
   webpack(config) {
     config.resolve.alias['react'] = 'preact/compat';
     config.resolve.alias['react-dom'] = 'preact/compat';
-    config.resolve.alias['components'] = 'components';
     config.resolve.alias['static'] = 'static';
-
     return config;
   },
   workboxOpts: {

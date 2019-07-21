@@ -4,6 +4,14 @@
     "alias": ["preactxdemo.now.sh"],
     "routes": [
         {
+            "src": "^/service-worker.js$",
+            "dest": "/_next/static/service-worker.js",
+            "headers": {
+              "cache-control": "public, max-age=43200, immutable",
+              "Service-Worker-Allowed": "/"
+            }
+        },
+        {
             "src":"/.*",
             "headers": { 
                 "Access-Control-Allow-Origin": "*",
@@ -26,14 +34,6 @@
                 "Accept-Encoding": "br",
                 "Service-Worker-Allowed": "/"
             } 
-        },
-        {	
-            "src": "^/service-worker.js$",	
-            "dest": "/_next/static/service-worker.js",
-            "headers": {
-                "cache-control": "public, max-age=43200, immutable",
-                "Service-Worker-Allowed": "/"
-            }
         }
     ],
     "builds": [
@@ -41,10 +41,13 @@
             "src": "server.js", 
             "use": "@now/node" 
         }, 
-        { 
-            "src": "next.config.js", 
-            "use": "@now/next" 
-        },
+        {
+            "src": "package.json",
+            "use": "@now/next",
+            "config": {
+              "maxLambdaSize": "10mb"
+            }
+        },      
         {
             "src": "static/**/*", 
             "use": "@now/static" 
