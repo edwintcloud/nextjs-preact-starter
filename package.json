@@ -1,0 +1,48 @@
+{
+  "name": "nextjs_preact_starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node server.js",
+    "build": "next build",
+    "next": "next",
+    "start": "cross-env NODE_ENV=production node server.js",
+    "lint": "eslint . --ext .js --ext .jsx --ignore-path .eslintignore --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cacheable-response": "^1.6.12",
+    "compression": "^1.7.4",
+    "cross-env": "^5.2.0",
+    "express": "^4.17.1",
+    "module-alias": "^2.2.0",
+    "next": "^9.0.0",
+    "preact": "^10.0.0-rc.0",
+    "preact-render-to-string": "^5.0.5",
+    "preact-ssr-prepass": "^1.0.0"
+  },
+  "_moduleAliases": {
+    "react": "node_modules/preact/compat",
+    "react-dom": "node_modules/preact/compat",
+    "react-ssr-prepass": "node_modules/preact-ssr-prepass"
+  },
+  "resolutions": {
+    "lodash": "4.17.14"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.2",
+    "next-compose-plugins": "^2.2.0",
+    "next-offline": "^4.0.2",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
