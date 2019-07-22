@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import App, { Container } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import Head from 'next/head';
@@ -37,11 +36,11 @@ const GlobalStyle = createGlobalStyle`
   body, html {
     height: 100%;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif;
+    font-family: apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+    color: #212529;
   }
 `;
 

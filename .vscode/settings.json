@@ -3,6 +3,9 @@
     "eslint.validate": ["javascript", "javascriptreact"],
     "[javascript]": {
       "editor.formatOnSave": true
+    },
+    "[json]": {
+      "editor.formatOnSave": true
     }
   }
   

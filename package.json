@@ -5,10 +5,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node server.js",
+    "dev": "node dev-server.js",
     "build": "next build",
-    "next": "next",
-    "start": "cross-env NODE_ENV=production node server.js",
+    "start": "next start",
     "lint": "eslint . --ext .js --ext .jsx --ignore-path .eslintignore --fix",
     "deploy": "now --target production",
     "now-build": "next build"
@@ -16,10 +15,7 @@
   "author": "Edwin cloud <ecloud412@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "cacheable-response": "^1.6.12",
-    "compression": "^1.7.4",
-    "cross-env": "^5.2.0",
-    "express": "^4.17.1",
+    "axios": "^0.19.0",
     "module-alias": "^2.2.0",
     "next": "^9.0.0",
     "next-compose-plugins": "^2.2.0",
@@ -32,8 +28,7 @@
   "_moduleAliases": {
     "react": "node_modules/preact/compat",
     "react-dom": "node_modules/preact/compat",
-    "react-ssr-prepass": "node_modules/preact-ssr-prepass",
-    "static": "static"
+    "react-ssr-prepass": "node_modules/preact-ssr-prepass"
   },
   "resolutions": {
     "lodash": "4.17.14"
@@ -46,6 +41,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
+    "http": "0.0.0",
     "husky": "^3.0.1",
     "lint-staged": "^9.2.0",
     "prettier": "^1.18.2",
