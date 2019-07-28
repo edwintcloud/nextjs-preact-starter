@@ -13,12 +13,12 @@
     },
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1.js"
+      "dest": "/api/index.js"
     }
   ],
   "builds": [
     {
-      "src": "api/**/*.js",
+      "src": "api/index.js",
       "use": "@now/node"
     },
     {

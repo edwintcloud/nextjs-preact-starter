@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const ResultBox = styled.code`
   display: grid;
-  ${props => (props.width && `width: ${props.width}`) || `width: 300px`};
+  ${props => (props.width && `width: ${props.width}`) || `width: 360px`};
   max-width: 80vw;
   margin-top: 5px;
   margin-bottom: 10px;
@@ -11,6 +11,7 @@ const ResultBox = styled.code`
   border: 1px solid #ced4da;
   padding: 0.5rem 0.7rem;
   color: #495057;
+  overflow: auto;
   ${props => props.message && `white-space: initial;`}
   :focus {
     color: #495057;
